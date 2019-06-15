@@ -9,9 +9,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link href="../advert.css" rel="stylesheet">
+    <link href="./advert.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   </head>
   <body style="
   background-image: url(https://www.indiafellow.org/blog/wp-content/uploads/2015/12/type_writer_78_2560x1600.jpg);
@@ -27,7 +27,9 @@
             <li class="nav-item active">
               <!-- <a class="nav-link" href="../content_1.html">Home <span class="sr-only">(current)</span></a> -->
                             <a class="nav-link" href="./login.html" style="position:relative;
-                            left:1100px;"> Login/Sign Up <span class="sr-only">  </span></a>
+                            top:40px; left:1050px;"> Login <span class="sr-only">  </span></a>
+                            <a class="nav-link" href="./signup.html" style="position:relative; float: left;
+                            left:1150px;"> SignUp <span class="sr-only">  </span></a>
 
             </li>
           </ul>
@@ -50,7 +52,19 @@
       <div class="fakeimg" style="height:400px;">Image</div>
       <p>Blog content</p>
     </div>
-
+    <button type="button"name="UV" id="upvote" style="
+    margin:5px;
+    position: relative;
+    opacity: 0.8;
+    ">Up Vote</button>
+      <span id="UVcount">  0  </span>
+      
+    <button type="button" name="DV" id="downvote" style="
+    margin: 5px;
+    position: relative;
+    opacity: 0.8;
+    ">Down Vote</button>
+      <span id="DVcount">  0  </span>    
     <div class="card">
       <div class="comment" style="height:30px;">Comment</div>
       <input type="textarea" placeholder="comment" name="comment" required="" style="height:30px;" >
@@ -72,17 +86,22 @@
 
   </div>
 </div>
-<button type="button" name="UV" style="
-margin:5px;
-position: relative;
-opacity: 0.8;
-">Up Vote</button>
-<button type="button" name="DV" style="
-margin: 5px;
-position: relative;
-opacity: 0.8;
-">Down Vote</button>
 
+
+
+<script>
+  var upvt = 0, dwvt = 0;
+  
+  $("#upvote").click(function(){
+    upvt++;
+    $("#UVcount").text(upvt);
+  });
+  
+  $("#downvote").click(function(){
+    dwvt++;
+    $("#DVcount").text(dwvt);
+  });
+  </script>
 <!-- <div class="footer" style="
   position: relative;
   color: rgb(242, 240, 255);
